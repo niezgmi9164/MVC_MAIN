@@ -1,0 +1,63 @@
+@model ZadaniaZespolu.Models.Zadanie
+
+@{
+    ViewData["Title"] = "Nowe zadanie";
+}
+
+<h1>Nowe zadanie</h1>
+
+<h4>Zadanie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tytul" class="control-label"></label>
+                <input asp-for="Tytul" class="form-control" />
+                <span asp-validation-for="Tytul" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opis" class="control-label"></label>
+                <textarea asp-for="Opis" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Opis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Osoba" class="control-label"></label>
+                <input asp-for="Osoba" class="form-control" />
+                <span asp-validation-for="Osoba" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Projekt" class="control-label"></label>
+                <input asp-for="Projekt" class="form-control" />
+                <span asp-validation-for="Projekt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<ZadaniaZespolu.Models.Status>()"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priorytet" class="control-label"></label>
+                <select asp-for="Priorytet" class="form-control" asp-items="Html.GetEnumSelectList<ZadaniaZespolu.Models.Priorytet>()"></select>
+                <span asp-validation-for="Priorytet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TerminWykonania" class="control-label"></label>
+                <input asp-for="TerminWykonania" class="form-control" />
+                <span asp-validation-for="TerminWykonania" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Powrót do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
