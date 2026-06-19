@@ -1,0 +1,66 @@
+@model ZadaniaZespolu.Models.Zadanie
+
+@{
+    ViewData["Title"] = "Szczegóły zadania";
+}
+
+<h1>Szczegóły zadania</h1>
+
+<div>
+    <h4>Zadanie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tytul)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tytul)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Osoba)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Osoba)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Projekt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Projekt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Priorytet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Priorytet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TerminWykonania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TerminWykonania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataUtworzenia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataUtworzenia)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edytuj</a> |
+    <a asp-action="Index">Powrót do listy</a>
+</div>
